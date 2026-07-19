@@ -1005,7 +1005,7 @@ def render_export_menu(report: Dict[str, Any]) -> None:
     )
 
 html(
-    '<div class="hero"><h1>🧬 AdDNA: AI Creative Intelligence</h1>'
+    '<div class="hero"><h1>🧬 AdDNA - AI Creative Intelligence</h1>'
     '<p>Evidence-led market analysis and campaign strategy.</p></div>'
 )
 
