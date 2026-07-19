@@ -2,93 +2,133 @@
 
 AdDNA collects ads from Foreplay and PiPiSpy, normalizes provider data, removes duplicate placements, extracts creative features, identifies market patterns, surfaces opportunity gaps, and generates actionable creative outputs.
 
-## What the dashboard covers
 
-- Market search by brand, category, country, platform, and provider
-- Provider-safe normalization (searched brand is never falsely assigned as advertiser)
-- Content-aware deduplication and duplicate-rate reporting
-- Hook and CTA extraction from provider fields, copy, or transcript
-- Pain points, benefits, proof, audience, tone, emotion, and positioning signals
-- Executive summary, winning patterns, opportunity gaps, and evidence counts
-- Positioning matrix, Creative DNA, and Market Scorecard
-- AI recommendations, creative brief, 30-second script, and shot list
-- Evidence table and complete JSON export
+Instead of only displaying analytics, AdDNA answers:
 
-## Run locally
+- What creative formats are winning?
+- Which hooks are overused?
+- How are competitors positioning themselves?
+- Where is the creative whitespace?
+- What campaign should be created next?
 
-```bash
-python3.11 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-cp .env.example .env
-python -m streamlit run app/main.py
-```
+The application combines deterministic analytics with LLM-generated market intelligence to help marketers make creative decisions faster.
 
-The app works in sample mode without API keys. Configure provider keys in `.env` for live data.
-
-## Architecture
-
-```text
-Provider APIs
-  -> Collector
-  -> Provider mappers
-  -> Advertisement schema
-  -> Creative deduplicator
-  -> Feature extractor
-  -> Pattern engine
-  -> Recommendation engine
-  -> Report generator
-  -> Streamlit dashboard
-```
-
-## Important interpretation note
-
-Search results can mention a searched brand without being official ads from that advertiser. AdDNA preserves the provider-detected brand and adds a data-quality warning rather than overwriting advertiser identity with the search term.
+<img width="1449" height="733" alt="Screenshot 2026-07-18 at 3 51 56 AM" src="https://github.com/user-attachments/assets/86be5313-043b-4381-9257-5aa93a47bd6a" />
 
 
-## v4 Insight-First UI
-
-The v4 dashboard replaces engagement graphs with decision-ready metric cards.
-
-Each intelligence metric includes:
-
-- Score and level
-- What the evidence means
-- Confidence
-- A specific improvement action
-
-New sections:
-
-- Executive Intelligence
-- Engagement Analysis
-- Creative Intelligence
-- Strategy Intelligence
-- Why Competitors Are Winning
-- Next Best Creative
-
-The scoring is directional and is explicitly based on the fields returned by providers.
+<img width="1068" height="731" alt="Screenshot 2026-07-18 at 3 52 47 AM" src="https://github.com/user-attachments/assets/87edc249-1c9e-4f1c-b7c0-836b4c08bb47" />
 
 
-## v6 LLM Tabs
+<img width="1083" height="728" alt="Screenshot 2026-07-18 at 3 53 53 AM" src="https://github.com/user-attachments/assets/3d581a59-c779-430f-8f20-c7d249006aa3" />
 
-The dashboard now uses four top-level tabs:
 
-- Overview
-- Market Intelligence
+<img width="1098" height="705" alt="Screenshot 2026-07-18 at 3 54 46 AM" src="https://github.com/user-attachments/assets/6a0c9991-5736-4f30-a0dd-30c91056e913" />
+
+------------------------------------------------------------
+
+Key Features
+------------
+
+- Multi-provider ad collection
+    - Foreplay
+    - PiPiSpy
+ 
+- AI Market Intelligence
+    - Executive Summary
+    - Market Readout
+    - Winning Creative Formats
+    - Common Hooks
+    - Product Positioning
+    - Competitor Patterns
+    - Creative Whitespace
+    - Strategic Takeaways
+
 - Creative Strategy
+    - AI-generated Creative Brief
+    - Campaign Objective
+    - Audience
+    - Concept
+    - Hook
+    - CTA
+    - Production Plan
+    - A/B Testing Matrix
+    - Platform Recommendations
+
 - Evidence
+    - Complete evidence table
+    - Source creatives
+    - Extracted hooks
+    - Languages
+    - Platforms
 
-Market Intelligence and the primary Creative Brief are generated through the configured
-OpenRouter model. If the API key is unavailable or the response is invalid, the UI does
-not display fabricated AI market claims.
+- Export
+    Export report as
+    - HTML
+    - JSON
+    - CSV
+    - ZIP
 
+------------------------------------------------------------
 
-## v7 UI refinements
+Installation
+------------
 
-- Added consistent spacing across tabs, cards, columns, and sections.
-- Added more top padding so the product header no longer touches the browser chrome.
-- Rebuilt the sidebar as a compact, consistent filter form with placeholders.
-- Added session-state persistence so export format changes do not erase the analysis.
-- Replaced multiple export buttons with one top-level export selector and one download button.
-- The complete ZIP export includes HTML, JSON, and CSV reports.
+1. python -m venv .venv
+
+2. source .venv/bin/activate
+
+Windows
+.venv\Scripts\activate
+
+3. pip install -r requirements.txt
+
+------------------------------------------------------------
+
+Run
+---
+
+streamlit run streamlit_app.py
+
+------------------------------------------------------------
+
+Highlights
+----------
+
+• Evidence-driven AI insights
+
+• English-language filtering
+
+• Creative whitespace detection
+
+• AI-generated campaign strategy
+
+• Modern Apple-inspired UI
+
+• Responsive dashboard
+
+• Multiple report export formats
+
+------------------------------------------------------------
+
+Known Limitations
+-----------------
+
+• Analysis quality depends on provider data.
+
+• LLM-generated insights are evidence-backed but should be reviewed before production use.
+
+• Video-level understanding is currently metadata-based rather than full frame-by-frame analysis.
+
+------------------------------------------------------------
+
+This project focuses on combining deterministic creative analytics with Large Language Models to produce actionable market intelligence rather than only descriptive analytics.
+
+The goal is to help marketers answer:
+
+"What creative should we make next?"
+
+instead of simply
+
+"What happened?"
+
+------------------------------------------------------------
