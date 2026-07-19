@@ -1,7 +1,6 @@
 import httpx
 from core.settings import settings
 
-
 class OpenRouterClient:
     def complete(self, messages: list[dict]) -> dict:
         if not settings.openrouter_api_key:

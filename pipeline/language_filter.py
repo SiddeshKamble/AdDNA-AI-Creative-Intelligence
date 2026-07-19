@@ -1,8 +1,6 @@
 from __future__ import annotations
-
 import re
 from dataclasses import dataclass
-
 from models.advertisement import Advertisement
 
 try:
@@ -10,16 +8,14 @@ try:
 except ImportError:  # pragma: no cover
     detect_langs = None
 
-
 @dataclass
 class LanguageFilterResult:
     kept_ads: list[Advertisement]
     removed_count: int
     language_counts: dict[str, int]
 
-
 class AdLanguageFilter:
-    """Detect ad-copy language and optionally retain English ads only."""
+    # Detect ad-copy language and optionally retain English ads only.
 
     ENGLISH_MARKERS = {
         "the", "and", "you", "your", "with", "for", "this", "that", "shop",

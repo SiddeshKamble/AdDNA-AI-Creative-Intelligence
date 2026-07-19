@@ -3,7 +3,6 @@ import httpx
 from core.settings import settings
 from providers.base import ProviderAPIError, ProviderConfigurationError
 
-
 class PiPiSpyClient:
     def __init__(self) -> None:
         self.base_url = settings.pipispy_base_url.rstrip("/")

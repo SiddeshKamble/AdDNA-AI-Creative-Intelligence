@@ -5,7 +5,6 @@ from pipeline.feature_extractor import CreativeFeatureExtractor
 from pipeline.language_filter import AdLanguageFilter
 from pipeline.report_generator import ReportGenerator
 
-
 class AdDNAPipeline:
     def __init__(self) -> None:
         self.collector = AdCollector()

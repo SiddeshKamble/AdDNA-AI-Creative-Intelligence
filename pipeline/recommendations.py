@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from models.creative import CreativeFeatures
 
-
 class RecommendationEngine:
     def generate(self, features: list[CreativeFeatures], pattern_presence: dict[str, int]) -> tuple[list[str], list[str]]:
         total = max(len(features), 1)

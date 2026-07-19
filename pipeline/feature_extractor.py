@@ -6,7 +6,6 @@ from collections import OrderedDict
 from models.advertisement import Advertisement
 from models.creative import CreativeFeatures
 
-
 class CreativeFeatureExtractor:
     PAIN_LEXICON = {
         "pain": "Pain",

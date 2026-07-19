@@ -2,7 +2,6 @@ from typing import Optional
 from pathlib import Path
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-
 class Settings(BaseSettings):
     openrouter_api_key: Optional[str] = None
     openrouter_model: str = "openai/gpt-4.1-mini"
@@ -27,7 +26,6 @@ class Settings(BaseSettings):
         env_file_encoding="utf-8",
         extra="ignore",
     )
-
 
 settings = Settings()
 for directory in (settings.cache_dir, settings.media_dir, settings.reports_dir):

@@ -3,7 +3,6 @@ import httpx
 from core.settings import settings
 from providers.base import ProviderAPIError, ProviderConfigurationError
 
-
 class ForeplayClient:
     def __init__(self) -> None:
         self.base_url = settings.foreplay_base_url.rstrip("/")

@@ -3,7 +3,6 @@ from core.settings import settings
 from models.market import MarketQuery
 from providers.foreplay.client import ForeplayClient
 
-
 class ForeplayDiscovery:
     name = "foreplay"
 

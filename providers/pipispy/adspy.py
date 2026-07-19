@@ -10,7 +10,6 @@ PLATFORM_MAP = {
     "tiktok": 1,
 }
 
-
 class PiPiSpyAdspy:
     name = "pipispy"
 

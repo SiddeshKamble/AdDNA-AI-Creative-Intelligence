@@ -6,7 +6,6 @@ from providers.foreplay.mapper import map_foreplay_ad
 from providers.pipispy.adspy import PiPiSpyAdspy
 from providers.pipispy.mapper import map_pipispy_ad
 
-
 class AdCollector:
     def __init__(self) -> None:
         self.foreplay = ForeplayDiscovery()

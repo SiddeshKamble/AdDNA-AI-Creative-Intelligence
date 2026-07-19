@@ -2,7 +2,6 @@ import json
 from pathlib import Path
 from typing import Any, Optional
 
-
 class JsonCache:
     def __init__(self, root: Path):
         self.root = root

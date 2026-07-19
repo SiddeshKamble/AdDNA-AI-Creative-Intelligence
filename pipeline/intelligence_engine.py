@@ -4,14 +4,11 @@ from collections import Counter
 from math import log10
 from statistics import mean
 from typing import Any, Optional
-
 from models.advertisement import Advertisement
 from models.creative import CreativeFeatures
 
-
 class IntelligenceEngine:
-    """Turn normalized creative and engagement evidence into decision-ready intelligence."""
-
+    # Turn normalized creative and engagement evidence into decision-ready intelligence.
     @staticmethod
     def _pct(value: int, total: int) -> int:
         return round((value / max(total, 1)) * 100)
@@ -375,7 +372,6 @@ class IntelligenceEngine:
                 }
                 for label, count in counts.most_common(limit)
             ]
-
         formats = distribution(
             [feature.creative_format for feature in features],
             limit=5,
@@ -392,7 +388,6 @@ class IntelligenceEngine:
             ],
             limit=5,
         )
-
         signals = {
             "Founder videos": self._pct(
                 sum(feature.founder_led for feature in features),
@@ -525,7 +520,6 @@ class IntelligenceEngine:
             },
         ]
         opportunities = sorted(opportunities, key=lambda item: item["score"], reverse=True)
-
         average_opportunity = round(mean(item["score"] for item in opportunities))
         saturation = min(100, duplicate_rate + max(0, 55 - opening_variety * 7))
         market_opportunity = round(

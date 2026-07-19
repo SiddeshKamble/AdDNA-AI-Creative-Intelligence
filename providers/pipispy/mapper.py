@@ -5,7 +5,6 @@ from models.market import MarketQuery
 
 PIPISPY_PLATFORM_MAP = {1: "facebook", 2: "instagram", 3: "tiktok"}
 
-
 def _int(value: Any) -> Optional[int]:
     try:
         return int(float(value)) if value is not None else None

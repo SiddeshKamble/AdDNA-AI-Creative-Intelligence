@@ -1,14 +1,11 @@
 from __future__ import annotations
-
 from typing import Optional
 import hashlib
 import re
 from dataclasses import dataclass
 from difflib import SequenceMatcher
 from urllib.parse import urlparse
-
 from models.advertisement import Advertisement
-
 
 @dataclass
 class DeduplicationResult:
@@ -16,9 +13,8 @@ class DeduplicationResult:
     duplicate_count: int
     groups: dict[str, list[str]]
 
-
 class CreativeDeduplicator:
-    """Content-aware deduplication that keeps the richest record in each group."""
+    # Content-aware deduplication that keeps the richest record in each group.
 
     @staticmethod
     def _normalize(value: Optional[str]) -> str:

@@ -1,10 +1,8 @@
 from __future__ import annotations
 
 from collections import Counter, defaultdict
-
 from models.creative import CreativeFeatures
 from models.report import EvidenceItem
-
 
 class PatternEngine:
     def _evidence(self, label: str, ids: list[str], total: int) -> EvidenceItem:

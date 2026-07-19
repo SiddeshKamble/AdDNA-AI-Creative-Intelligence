@@ -1,6 +1,5 @@
 from pydantic import BaseModel, Field
 
-
 class CreativeFeatures(BaseModel):
     ad_id: str
     provider: str

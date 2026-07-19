@@ -1,6 +1,5 @@
 from pydantic import BaseModel, Field
 
-
 class PatternCluster(BaseModel):
     name: str
     ad_ids: list[str] = Field(default_factory=list)

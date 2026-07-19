@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 from datetime import datetime
 from html import escape
 from io import BytesIO
@@ -16,10 +15,8 @@ if str(PROJECT_ROOT) not in sys.path:
 
 import pandas as pd
 import streamlit as st
-
 from models.market import AdProvider, MarketQuery
 from pipeline.orchestrator import AdDNAPipeline
-
 
 st.set_page_config(
     page_title="AdDNA: AI Creative Intelligence",
@@ -27,7 +24,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
-
 st.markdown(
     """
 <style>
@@ -174,7 +170,6 @@ div[data-testid="stExpander"] [data-testid="stExpanderDetails"]{padding:.85rem .
 """,
     unsafe_allow_html=True,
 )
-
 
 st.markdown(r"""
 <style>
@@ -845,10 +840,8 @@ st.markdown(r"""
 def safe(value: Any) -> str:
     return escape(str(value))
 
-
 def html(markup: str) -> None:
     st.markdown(markup.strip(), unsafe_allow_html=True)
-
 
 def render_kpi(label: str, value: Any) -> None:
     html(
@@ -857,7 +850,6 @@ def render_kpi(label: str, value: Any) -> None:
             safe(label), safe(value)
         )
     )
-
 
 def render_intelligence(
     title: str,
@@ -887,7 +879,6 @@ def render_intelligence(
         )
     )
 
-
 def evidence_rows(report: Dict[str, Any]) -> List[Dict[str, Any]]:
     lookup = {
         item["ad_id"]: item for item in report.get("features", [])
@@ -909,10 +900,8 @@ def evidence_rows(report: Dict[str, Any]) -> List[Dict[str, Any]]:
         )
     return rows
 
-
 def build_csv(report: Dict[str, Any]) -> str:
     return pd.DataFrame(evidence_rows(report)).to_csv(index=False)
-
 
 def build_html(report: Dict[str, Any]) -> str:
     intelligence = report.get("intelligence", {})
@@ -951,7 +940,6 @@ small{{color:#6e6e73;text-transform:uppercase;font-weight:700}}
         brief_items,
     )
 
-
 def export_payload(
     report: Dict[str, Any],
     export_format: str,
@@ -982,13 +970,10 @@ def export_payload(
     )
 
 
-
-
 def _data_uri(data: Union[bytes, str], mime_type: str) -> str:
     raw = data.encode("utf-8") if isinstance(data, str) else data
     encoded = base64.b64encode(raw).decode("ascii")
     return f"data:{mime_type};base64,{encoded}"
-
 
 def render_export_menu(report: Dict[str, Any]) -> None:
     formats = [
@@ -1018,7 +1003,6 @@ def render_export_menu(report: Dict[str, Any]) -> None:
 </div>
 """
     )
-
 
 html(
     '<div class="hero"><h1>🧬 AdDNA: AI Creative Intelligence</h1>'

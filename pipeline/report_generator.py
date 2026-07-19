@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from collections import Counter
 from datetime import datetime, timezone
-
 from models.advertisement import Advertisement
 from models.creative import CreativeFeatures
 from models.market import MarketQuery
@@ -12,7 +11,6 @@ from pipeline.creative_brief import CreativeBriefGenerator
 from pipeline.pattern_engine import PatternEngine
 from pipeline.intelligence_engine import IntelligenceEngine
 from pipeline.recommendations import RecommendationEngine
-
 
 class ReportGenerator:
     def __init__(self) -> None:

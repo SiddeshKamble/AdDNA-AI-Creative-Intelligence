@@ -9,7 +9,6 @@ class AdProvider(str, Enum):
     BOTH = "both"
     SAMPLE = "sample"
 
-
 class MarketQuery(BaseModel):
     brand: str = ""
     category: str = ""

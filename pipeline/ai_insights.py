@@ -12,8 +12,7 @@ from models.market import MarketQuery
 
 
 class AIInsightGenerator:
-    """Generate evidence-grounded market intelligence through OpenRouter."""
-
+    # Generate evidence-grounded market intelligence through OpenRouter.
     def __init__(self) -> None:
         self.client = OpenRouterClient()
 
@@ -290,7 +289,7 @@ class AIInsightGenerator:
         patterns: Dict[str, Any],
         fallback: Dict[str, Any],
     ) -> Dict[str, Any]:
-        """Generate AI intelligence, with a complete deterministic fallback."""
+        # Generate AI intelligence, with a complete deterministic fallback.
         if not settings.openrouter_api_key:
             return self._empty_ai_output(
                 query,

@@ -2,14 +2,11 @@ from abc import ABC, abstractmethod
 from typing import Any
 from models.market import MarketQuery
 
-
 class ProviderConfigurationError(RuntimeError):
     pass
 
-
 class ProviderAPIError(RuntimeError):
     pass
-
 
 class AdProviderClient(ABC):
     name: str
